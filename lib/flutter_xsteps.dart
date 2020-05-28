@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'binding_helper.dart';
-
 class Xsteps extends StatefulWidget {
-  int current;
-  List<Widget> childrens;
-  Color outColor;
-  Color innerSelectColor;
-  Color innerUnSelectColor;
+ final int current;
+ final List<Widget> childrens;
+ final Color outColor;
+ final Color innerSelectColor;
+ final Color innerUnSelectColor;
 
   Xsteps(
       {this.current,
@@ -32,16 +31,9 @@ class XstepsState extends State<Xsteps> {
 
   @override
   Widget build(BuildContext context) {
-//    List<Widget> rowChildrens = List();
-//    rowChildrens.add(columnProgress);
-//    rowChildrens.addAll(widget.childrens);
-//    Row row = Row(
-//      children: rowChildrens,
-//    );
     List<Widget> mViews = List();
     for (int i = 0; i < widget.childrens.length; i++) {
       Widget childrenItem = widget.childrens[i];
-      double childHeight = 20;
       List<Widget> rowWidgets = List();
       rowWidgets.add(buildItemProgress(i));
       rowWidgets.add(RectProvider(

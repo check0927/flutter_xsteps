@@ -1,8 +1,7 @@
 name: flutter_xsteps
-description: A new Flutter package project.
+description: A steps plugin for flutter.
 version: 0.0.1
-author: WuShenglei
-homepage:
+homepage: https://github.com/check0927/flutter_xsteps
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

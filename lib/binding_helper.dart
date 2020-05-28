@@ -36,12 +36,14 @@ abstract class AfterRenderingMixin<T extends StatefulWidget> extends State<T> {
 /// }
 ///
 mixin GetRectMinxin<T extends StatefulWidget> on State<T> {
+  // ignore: must_call_super
   void didChangeDependencies() {
     WidgetsBinding.instance.addPostFrameCallback(onAfterRendering);
   }
 
   BuildContext get context;
 
+  // ignore: must_call_super
   void didUpdateWidget(T oldWidget) {
     WidgetsBinding.instance.addPostFrameCallback(onAfterRendering);
   }

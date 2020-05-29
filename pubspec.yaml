@@ -1,6 +1,6 @@
 name: flutter_xsteps
 description: A steps plugin for flutter.
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/check0927/flutter_xsteps
 
 environment:
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_screenutil: ^0.5.3
+  flutter_screenutil: ^1.1.0
   vector_math: ^2.0.8
 dev_dependencies:
   flutter_test:

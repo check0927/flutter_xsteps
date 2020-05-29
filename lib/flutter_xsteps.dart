@@ -4,19 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'binding_helper.dart';
+
 class Xsteps extends StatefulWidget {
- final int current;
- final List<Widget> childrens;
- final Color outColor;
- final Color innerSelectColor;
- final Color innerUnSelectColor;
+  final int current;
+  final List<Widget> childrens;
+  final Color outColor;
+  final Color innerSelectColor;
+  final Color innerUnSelectColor;
 
   Xsteps(
       {this.current,
-        this.childrens,
-        this.innerSelectColor = const Color(0xff3B8CFF),
-        this.innerUnSelectColor = const Color(0xffbdbdbd),
-        this.outColor = const Color(0xffbdbdbd)})
+      this.childrens,
+      this.innerSelectColor = const Color(0xff3B8CFF),
+      this.innerUnSelectColor = const Color(0xffbdbdbd),
+      this.outColor = const Color(0xffbdbdbd)})
       : assert(current != null),
         assert(childrens != null);
 
@@ -60,7 +61,7 @@ class XstepsState extends State<Xsteps> {
   buildItemProgress(int index) {
     return Container(
       alignment: Alignment.topCenter,
-      width: ScreenUtil.getInstance().setWidth(15),
+      width: ScreenUtil().setWidth(15),
       child: Column(
         children: <Widget>[
           Stack(
@@ -74,8 +75,8 @@ class XstepsState extends State<Xsteps> {
                       decoration: BoxDecoration(
                           color: Color.fromARGB(77, 59, 140, 255),
                           shape: BoxShape.circle),
-                      width: ScreenUtil.getInstance().setWidth(15),
-                      height: ScreenUtil.getInstance().setWidth(15),
+                      width: ScreenUtil().setWidth(15),
+                      height: ScreenUtil().setWidth(15),
                     ),
                     offstage: index != widget.current,
                   ),
@@ -85,31 +86,29 @@ class XstepsState extends State<Xsteps> {
                             ? widget.innerUnSelectColor
                             : widget.innerSelectColor,
                         shape: BoxShape.circle),
-                    width: ScreenUtil.getInstance().setWidth(9),
-                    height: ScreenUtil.getInstance().setWidth(9),
+                    width: ScreenUtil().setWidth(9),
+                    height: ScreenUtil().setWidth(9),
                   ),
                 ],
               ),
               Container(
                 margin: EdgeInsets.only(
                     top: index != widget.current
-                        ? ScreenUtil.getInstance().setWidth(9)
-                        : ScreenUtil.getInstance().setWidth(12)),
+                        ? ScreenUtil().setWidth(9)
+                        : ScreenUtil().setWidth(12)),
                 height: heights.length == widget.childrens.length
                     ? heights[index]
                     : 0,
-//                padding: EdgeInsets.only(top: ScreenUtil.getInstance().setWidth(52)),
-//                height: index != widget.current
-//                    ? ScreenUtil.getInstance().setWidth(91)
-//                    : ScreenUtil.getInstance().setWidth(88),
-                width: ScreenUtil.getInstance().setWidth(1),
-                color: index >= widget.current?widget.outColor:widget.innerSelectColor,
+                width: ScreenUtil().setWidth(1),
+                color: index >= widget.current
+                    ? widget.outColor
+                    : widget.innerSelectColor,
               )
             ],
           )
         ],
       ),
-//      height: ScreenUtil.getInstance().setWidth(70),
+//      height: ScreenUtil() .setWidth(70),
     );
   }
 

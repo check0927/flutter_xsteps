@@ -1,4 +1,3 @@
-
 import 'package:flutter/widgets.dart';
 import 'package:vector_math/vector_math_64.dart';
 
@@ -55,10 +54,9 @@ mixin GetRectMinxin<T extends StatefulWidget> on State<T> {
       Vector3 vector3 = renderObject.getTransformTo(null)?.getTranslation();
       onGetRect(
           new Rect.fromLTWH(vector3?.x, vector3?.y, size?.width, size?.height));
-    }else{
+    } else {
       // onGetRect(new Rect.fromLTWH(0.0, 0.0, 0.0, 0.0));
     }
-
   }
 
   void onGetRect(Rect rect);
@@ -71,6 +69,7 @@ typedef void OnGetRect(Rect rect);
 class RectProvider extends StatefulWidget {
   ///
   final Widget child;
+
   /// Get rect callback
   final OnGetRect onGetRect;
 
@@ -86,7 +85,8 @@ class RectProvider extends StatefulWidget {
 
 class _RectProviderState extends State<RectProvider>
     with GetRectMinxin<RectProvider> {
-  bool isCallBack=true;
+  bool isCallBack = true;
+
   @override
   Widget build(BuildContext context) {
     return widget.child;
@@ -94,9 +94,9 @@ class _RectProviderState extends State<RectProvider>
 
   @override
   void onGetRect(Rect rect) {
-    if(isCallBack) {
+    if (isCallBack) {
       widget.onGetRect(rect);
-      isCallBack=false;
+      isCallBack = false;
     }
   }
 }

@@ -81,7 +81,7 @@ class XstepsState extends State<Xsteps> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        color: index != widget.current
+                        color: index > widget.current
                             ? widget.innerUnSelectColor
                             : widget.innerSelectColor,
                         shape: BoxShape.circle),
@@ -103,7 +103,7 @@ class XstepsState extends State<Xsteps> {
 //                    ? ScreenUtil.getInstance().setWidth(91)
 //                    : ScreenUtil.getInstance().setWidth(88),
                 width: ScreenUtil.getInstance().setWidth(1),
-                color: widget.outColor,
+                color: index >= widget.current?widget.outColor:widget.innerSelectColor,
               )
             ],
           )
